@@ -1,0 +1,202 @@
+{{ 'section-product-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="product-hero-section hero-gradient min-h-screen flex items-center pt-20">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div class="text-center lg:text-left">
+        {% if section.settings.badge != blank %}
+          <div class="inline-block bg-accent/20 px-4 py-1 rounded-full text-accent text-sm font-medium mb-6">
+            {{ section.settings.badge }}
+          </div>
+        {% endif %}
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          {{ section.settings.heading | default: "Titan Two" }}
+        </h1>
+        
+        {% if section.settings.subheading != blank %}
+          <h2 class="text-xl md:text-2xl text-gray-300 mb-6">
+            {{ section.settings.subheading }}
+          </h2>
+        {% endif %}
+        
+        {% if section.settings.description != blank %}
+          <p class="text-lg text-gray-400 mb-8 max-w-2xl">
+            {{ section.settings.description }}
+          </p>
+        {% endif %}
+        
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <a 
+            href="{{ section.settings.button_link }}" 
+            class="inline-block bg-accent hover:bg-accent-light text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 button-glow"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+      </div>
+      
+      <!-- Product Gallery -->
+      {% if section.settings.show_gallery %}
+        <div class="product-gallery">
+          <div class="gallery-container relative">
+            <div class="gallery-slider overflow-hidden rounded-xl">
+              <div class="gallery-track flex transition-transform duration-500 ease-in-out" id="gallery-track">
+                <div class="gallery-slide min-w-full">
+                  <img 
+                    src="{{ 'titan-two-device.png' | asset_url }}" 
+                    alt="Titan Two Device"
+                    class="w-full h-auto object-cover"
+                  >
+                </div>
+                <div class="gallery-slide min-w-full">
+                  <img 
+                    src="{{ 'titan_banner.png' | asset_url }}" 
+                    alt="Titan Two Banner"
+                    class="w-full h-auto object-cover"
+                  >
+                </div>
+              </div>
+            </div>
+            
+            <!-- Gallery Navigation -->
+            <div class="gallery-nav flex justify-center mt-6 space-x-2">
+              <button class="gallery-dot w-3 h-3 rounded-full bg-gray-600 hover:bg-accent transition-colors duration-300 active" data-slide="0"></button>
+              <button class="gallery-dot w-3 h-3 rounded-full bg-gray-600 hover:bg-accent transition-colors duration-300" data-slide="1"></button>
+            </div>
+            
+            <!-- Gallery Arrows -->
+            <button class="gallery-arrow gallery-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-300">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="gallery-arrow gallery-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-300">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('gallery-track');
+  const dots = document.querySelectorAll('.gallery-dot');
+  const prevBtn = document.querySelector('.gallery-prev');
+  const nextBtn = document.querySelector('.gallery-next');
+  let currentSlide = 0;
+  const totalSlides = dots.length;
+
+  function updateGallery() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+      dot.classList.toggle('bg-accent', index === currentSlide);
+      dot.classList.toggle('bg-gray-600', index !== currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateGallery();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateGallery();
+  }
+
+  // Event listeners
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentSlide = index;
+      updateGallery();
+    });
+  });
+
+  // Auto-play
+  setInterval(nextSlide, 5000);
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Hero Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "All-in-One Universal Controller Device"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Titan Two"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Universal Gaming Converter & Crossover Device"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Use your favorite controller on PS, Xbox, Switch and PC with powerful mods, macros and scripting capabilities."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/#products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gallery",
+      "label": "Show Product Gallery",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Hero Section"
+    }
+  ]
+}
+{% endschema %}

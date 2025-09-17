@@ -1,0 +1,84 @@
+/* SEO Text Section Styles */
+.seo-text-section {
+  background-color: #0A0A0A;
+}
+
+.seo-text-section h2 {
+  color: #ffffff;
+}
+
+.seo-text-section h3 {
+  color: #ffffff;
+}
+
+.seo-text-section .prose {
+  color: #d1d5db;
+}
+
+.seo-text-section .prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.seo-text-section .prose ul {
+  list-style: none;
+  padding: 0;
+}
+
+.seo-text-section .prose li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.seo-text-section .fa-check {
+  color: #4ec044;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* CTA Button */
+.seo-text-section .bg-accent {
+  background-color: #4ec044;
+  transition: background-color 0.3s ease;
+}
+
+.seo-text-section .bg-accent:hover {
+  background-color: #65d45b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .seo-text-section {
+    padding: 3rem 0;
+  }
+  
+  .seo-text-section h2 {
+    font-size: 2rem;
+  }
+  
+  .seo-text-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .seo-text-section .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.seo-text-section .prose {
+  animation: fadeIn 0.8s ease forwards;
+}

@@ -1,0 +1,281 @@
+{{ 'section-software.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="py-20 bg-dark-accent section-{{ section.id }}-padding" id="gtuner">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      {%- if section.settings.badge != blank -%}
+        <div class="inline-block bg-accent/20 px-4 py-1 rounded-full text-accent text-sm font-medium mb-4">{{ section.settings.badge }}</div>
+      {%- endif -%}
+      
+      {%- if section.settings.heading != blank -%}
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          {{ section.settings.heading | replace: 'Software', '<span class="text-accent">Software</span>' }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <p class="text-gray-400 max-w-2xl mx-auto">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="bg-dark p-6 rounded-xl border border-gray-800">
+        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+          <div class="flex items-center space-x-2 mb-3">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-gray-400 text-sm ml-2">Gtuner IV - TITAN TWO Programming Interface</span>
+          </div>
+          <div class="bg-black rounded p-3 font-mono text-sm">
+            <div class="text-gray-500 mb-2">PROJECTS</div>
+            <div class="text-gray-300 mb-1">Scripts</div>
+            <div class="text-accent mb-1">RapidFire.gpc</div>
+            <div class="text-accent mb-1">ComboMacro.gpc</div>
+            <div class="text-accent mb-4">KeyMapping.gpc</div>
+            <div class="text-gray-500">// TITAN TWO Script Example</div>
+            <div class="text-blue-400">int main() {</div>
+            <div class="text-gray-300 ml-4">if (event_press(PS4_R2)) {</div>
+            <div class="text-gray-300 ml-8">combo_run(RapidFire);</div>
+            <div class="text-gray-300 ml-4">}</div>
+            <div class="text-gray-300 ml-4">if (event_press(PS4_L1 + PS4_R1)) {</div>
+            <div class="text-gray-300 ml-8">combo_run(SpecialMove);</div>
+            <div class="text-gray-300 ml-4">}</div>
+            <div class="text-blue-400">}</div>
+          </div>
+          <div class="mt-4 text-sm">
+            <div class="text-green-400">TITAN TWO Connected: Port 1</div>
+            <div class="text-accent">Ready</div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="text-2xl font-semibold mb-4">{{ section.settings.subheading }}</h3>
+        {%- endif -%}
+        
+        {%- if section.settings.subdescription != blank -%}
+          <p class="text-gray-400 mb-6">{{ section.settings.subdescription }}</p>
+        {%- endif -%}
+        
+        <div class="space-y-4 mb-8">
+          {%- for block in section.blocks -%}
+            <div class="flex items-start space-x-3" {{ block.shopify_attributes }}>
+              <div class="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mt-1">
+                <i class="{{ block.settings.icon }} text-accent text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">{{ block.settings.title }}</h4>
+                <p class="text-gray-400 text-sm">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+        
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          <a class="button-glow bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-md font-semibold transition duration-300 inline-block" href="{{ section.settings.button_link }}" {% if section.settings.button_link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+            {{ section.settings.button_label }}
+          </a>
+        {%- endif -%}
+        
+        {%- if section.settings.button_note != blank -%}
+          <p class="text-gray-400 text-sm mt-2">{{ section.settings.button_note }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+    
+    {%- if section.settings.show_gamepacks -%}
+      <div class="mt-16">
+        <h3 class="text-2xl font-semibold text-center mb-8">Newest Game Scripts</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-dark p-4 rounded-lg border border-gray-800 text-center">
+            <h4 class="font-semibold mb-2">COD Black Ops 6 (Script)</h4>
+          </div>
+          <div class="bg-dark p-4 rounded-lg border border-gray-800 text-center">
+            <h4 class="font-semibold mb-2">NBA 2K25 (Script)</h4>
+          </div>
+          <div class="bg-dark p-4 rounded-lg border border-gray-800 text-center">
+            <h4 class="font-semibold mb-2">PUBG (Script)</h4>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Software Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "Powerful Software"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Gtuner IV Software"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Unlock the full potential of your TITAN TWO with our advanced programming software."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Powerful Programming Interface"
+    },
+    {
+      "type": "textarea",
+      "id": "subdescription",
+      "label": "Subdescription",
+      "default": "Gtuner IV is a comprehensive development environment that allows you to create, test, and deploy custom scripts to your TITAN TWO device. From simple button remapping to complex macros, the possibilities are endless."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Download Gtuner IV"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "https://www.consoletuner.com/downloads/"
+    },
+    {
+      "type": "text",
+      "id": "button_note",
+      "label": "Button Note",
+      "default": "Available for Win10(x64), Win8.1(x64), Win7(x64), OS X 10.13+"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gamepacks",
+      "label": "Show Game Scripts",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Software Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon Class",
+          "default": "fas fa-code",
+          "info": "Font Awesome icon class"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Software Section",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-code",
+            "title": "GPC Scripting Language",
+            "description": "C-like syntax for creating powerful gaming scripts"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-mouse-pointer",
+            "title": "Visual Programming",
+            "description": "Drag-and-drop interface for beginners with no coding experience"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-play",
+            "title": "Real-time Testing",
+            "description": "Test your scripts in real-time with visual feedback"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-users",
+            "title": "Community Scripts",
+            "description": "Access a library of community-created scripts for popular games"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-cog",
+            "title": "Device Management",
+            "description": "Update firmware, manage profiles, and configure device settings"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,71 @@
+/* Hero Section Styles */
+.hero-gradient {
+  background: radial-gradient(circle at 70% 30%, rgba(78, 192, 68, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  background-color: #0A0A0A;
+}
+
+.hero-gradient h1 {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.hero-gradient h2 {
+  color: #d1d5db;
+}
+
+.hero-gradient p {
+  color: #9ca3af;
+}
+
+.hero-gradient .bg-accent {
+  background-color: #4ec044;
+  transition: background-color 0.3s ease;
+}
+
+.hero-gradient .bg-accent:hover {
+  background-color: #65d45b;
+}
+
+.hero-gradient .text-accent {
+  color: #4ec044;
+}
+
+.hero-gradient .bg-accent\/20 {
+  background-color: rgba(78, 192, 68, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-gradient {
+    padding-top: 4rem;
+    min-height: 80vh;
+  }
+  
+  .hero-gradient h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-gradient h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-gradient .md\:w-1\/2 {
+  animation: fadeInUp 0.8s ease forwards;
+}

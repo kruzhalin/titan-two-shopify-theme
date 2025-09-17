@@ -1,0 +1,166 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hero-gradient min-h-screen flex items-center pt-20 section-{{ section.id }}-padding">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        {%- if section.settings.badge != blank -%}
+          <div class="inline-block bg-accent/20 px-4 py-1 rounded-full text-accent text-sm font-medium mb-6">{{ section.settings.badge }}</div>
+        {%- endif -%}
+        
+        {%- if section.settings.heading != blank -%}
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            {{ section.settings.heading | replace: 'TITAN', '<span class="text-accent">TITAN</span>' }}
+          </h1>
+        {%- endif -%}
+        
+        {%- if section.settings.subheading != blank -%}
+          <h2 class="text-xl md:text-2xl text-gray-300 mb-6">{{ section.settings.subheading }}</h2>
+        {%- endif -%}
+        
+        {%- if section.settings.text != blank -%}
+          <p class="text-gray-400 mb-8 max-w-lg">{{ section.settings.text }}</p>
+        {%- endif -%}
+        
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a class="button-glow bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-md text-center font-semibold transition duration-300" href="{{ section.settings.button_link }}" {% if section.settings.button_link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+      
+      <div class="md:w-1/2 flex justify-center">
+        <div class="relative">
+          {%- if section.settings.image != blank -%}
+            <img src="{{ section.settings.image | image_url: width: 600 }}" alt="{{ section.settings.image.alt | default: section.settings.heading }}" class="w-full max-w-md mx-auto">
+          {%- else -%}
+            <img src="{{ 'titan_banner.png' | asset_url }}" alt="TITAN TWO Device" class="w-full max-w-md mx-auto">
+          {%- endif -%}
+          <div class="absolute -top-10 -right-10 w-20 h-20 bg-accent/20 rounded-full blur-xl"></div>
+          <div class="absolute -bottom-5 -left-5 w-16 h-16 bg-accent/20 rounded-full blur-xl"></div>
+        </div>
+      </div>
+    </div>
+    
+    {%- if section.settings.show_scroll_indicator -%}
+      <div class="flex justify-center mt-16">
+        <a class="scroll-indicator text-accent" href="#features">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    {%- endif -%}
+    
+    {%- if section.settings.bottom_text != blank -%}
+      <div class="mt-8 bg-accent/10 border border-accent/30 rounded-lg p-4">
+        <p class="text-center text-gray-200">{{ section.settings.bottom_text }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "Next Generation Gaming Device"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "TITANTWO"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Ultimate Gaming Converter & Crossover Device"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Get TITAN TWO"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "label": "Show Scroll Indicator",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom Text",
+      "default": "Available in Europe on Amazon"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}

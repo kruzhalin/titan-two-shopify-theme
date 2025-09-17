@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "badge": "Next Generation Gaming Device",
+        "heading": "TITANTWO",
+        "subheading": "Ultimate Gaming Converter & Crossover Device",
+        "text": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+        "button_label": "Get TITAN TWO",
+        "button_link": "/#products",
+        "show_scroll_indicator": true,
+        "bottom_text": "Available in Europe",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-exchange-alt",
+            "title": "Converters, Adapters and Crossover Devices",
+            "description": "Connect your favorite controller to multiple supported gaming systems with Titan Two."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1"
+      ],
+      "settings": {
+        "badge": "Why Choose Titan Two",
+        "heading": "Key Features",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "features"
+  ]
+}

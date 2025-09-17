@@ -1,0 +1,129 @@
+{{ 'section-seo-text.css' | asset_url | stylesheet_tag }}
+
+<div class="seo-text-section py-20 bg-dark">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      {% if section.settings.heading != blank %}
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      
+      <div class="prose prose-lg prose-invert max-w-none">
+        {% if section.settings.content != blank %}
+          <div class="text-gray-300 leading-relaxed">
+            {{ section.settings.content }}
+          </div>
+        {% endif %}
+        
+        {% if section.settings.additional_content != blank %}
+          <div class="text-gray-300 leading-relaxed mt-8">
+            {{ section.settings.additional_content }}
+          </div>
+        {% endif %}
+      </div>
+      
+      {% if section.settings.show_features and section.settings.features != blank %}
+        <div class="mt-12">
+          <h3 class="text-2xl font-semibold mb-6 text-white">Key Features</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {% assign features = section.settings.features | split: ',' %}
+            {% for feature in features %}
+              <li class="flex items-start">
+                <i class="fas fa-check text-accent mr-3 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-300">{{ feature | strip }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      
+      {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+        <div class="text-center mt-12">
+          <a 
+            href="{{ section.settings.cta_link }}" 
+            class="inline-block bg-accent hover:bg-accent-light text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300"
+          >
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SEO Text Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About TITANTWO"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Main Content",
+      "default": "<p>TITANTWO is the most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "additional_content",
+      "label": "Additional Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_features",
+      "label": "Show Features List",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "features",
+      "label": "Features (comma separated)",
+      "default": "Universal controller compatibility,Powerful mods and macros,Cross-platform gaming,Advanced scripting capabilities,Windows and macOS support",
+      "info": "Enter features separated by commas"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Call to Action Text",
+      "default": "Get TITANTWO Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Call to Action Link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "SEO Text Section"
+    }
+  ]
+}
+{% endschema %}

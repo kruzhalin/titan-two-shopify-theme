@@ -1,0 +1,87 @@
+{{ 'section-product-overview.css' | asset_url | stylesheet_tag }}
+
+<div class="product-overview-section py-20 bg-dark">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      {% if section.settings.heading != blank %}
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      
+      {% if section.settings.content != blank %}
+        <div class="prose prose-lg prose-invert max-w-none mb-8">
+          {{ section.settings.content }}
+        </div>
+      {% endif %}
+      
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a 
+          href="{{ section.settings.button_link }}" 
+          class="inline-block bg-accent hover:bg-accent-light text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Overview Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Overview"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Detailed product description will be added soon.</p><ul><li>Use your favorite controller on PS, Xbox, Switch and PC</li><li>Powerful mods, macros and scripting with Gtuner IV</li><li>Cross-play and extensive peripheral compatibility</li></ul>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/#products"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Overview Section"
+    }
+  ]
+}
+{% endschema %}

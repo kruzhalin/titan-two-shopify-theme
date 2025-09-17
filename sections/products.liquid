@@ -1,0 +1,219 @@
+{{ 'section-products.css' | asset_url | stylesheet_tag }}
+
+<div class="products-section py-20 bg-dark-accent">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <div class="inline-block bg-accent/20 px-4 py-1 rounded-full text-accent text-sm font-medium mb-4">
+        {{ section.settings.badge | default: "Our Products" }}
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        {{ section.settings.heading | default: "TITANTWO Products" }}
+      </h2>
+      {% if section.settings.description != blank %}
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'product' %}
+            <div class="product-card bg-dark p-6 rounded-xl border border-gray-800 hover:border-accent/50 transition-all duration-300 group">
+              {% if block.settings.product_image != blank %}
+                <div class="product-image mb-6 overflow-hidden rounded-lg">
+                  <img 
+                    src="{{ block.settings.product_image | img_url: '400x400' }}" 
+                    alt="{{ block.settings.product_title }}"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  >
+                </div>
+              {% endif %}
+              
+              <div class="product-content">
+                <h3 class="text-xl font-semibold mb-3 text-white">
+                  {{ block.settings.product_title }}
+                </h3>
+                
+                {% if block.settings.product_description != blank %}
+                  <p class="text-gray-400 mb-4">
+                    {{ block.settings.product_description }}
+                  </p>
+                {% endif %}
+
+                {% if block.settings.product_features != blank %}
+                  <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                    {% assign features = block.settings.product_features | split: ',' %}
+                    {% for feature in features %}
+                      <li class="flex items-center">
+                        <i class="fas fa-check text-accent mr-2"></i>
+                        {{ feature | strip }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                  {% if block.settings.product_link != blank %}
+                    <a 
+                      href="{{ block.settings.product_link }}" 
+                      class="flex-1 bg-accent hover:bg-accent-light text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-300"
+                    >
+                      {{ block.settings.button_text | default: "Learn More" }}
+                    </a>
+                  {% endif %}
+                  
+                  {% if block.settings.buy_link != blank %}
+                    <a 
+                      href="{{ block.settings.buy_link }}" 
+                      class="flex-1 border border-accent text-accent hover:bg-accent hover:text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-300"
+                    >
+                      {{ block.settings.buy_button_text | default: "Buy Now" }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Products Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "Our Products"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "TITANTWO Products"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover our range of gaming devices and accessories designed to enhance your gaming experience."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product Title",
+          "default": "Product Name"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description",
+          "label": "Product Description"
+        },
+        {
+          "type": "textarea",
+          "id": "product_features",
+          "label": "Product Features (comma separated)",
+          "info": "Enter features separated by commas"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "buy_link",
+          "label": "Buy Link"
+        },
+        {
+          "type": "text",
+          "id": "buy_button_text",
+          "label": "Buy Button Text",
+          "default": "Buy Now"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Section",
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "product_title": "TITAN TWO",
+            "product_description": "The most advanced gaming device that allows you to use your favorite controller on any console.",
+            "product_features": "Universal controller compatibility,Mods and macros support,Cross-platform gaming,Scripting capabilities",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "product_title": "Bluetooth Adapter",
+            "product_description": "Wireless connectivity for your TITAN TWO device.",
+            "product_features": "Wireless connection,Low latency,Long battery life,Easy setup",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "product_title": "Connection Kit",
+            "product_description": "Complete set of cables and adapters for all your gaming needs.",
+            "product_features": "Multiple cable types,High quality connectors,Compatible with all consoles,Durable construction",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

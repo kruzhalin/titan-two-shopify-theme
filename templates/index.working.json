@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "badge": "Next Generation Gaming Device",
+        "heading": "TITANTWO",
+        "subheading": "Ultimate Gaming Converter & Crossover Device",
+        "text": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+        "button_label": "Get TITAN TWO",
+        "button_link": "/#products",
+        "show_scroll_indicator": true,
+        "bottom_text": "Available in Europe",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-exchange-alt",
+            "title": "Converters, Adapters and Crossover Devices",
+            "description": "Connect your favorite controller to multiple supported gaming systems with Titan Two."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-magic",
+            "title": "Mods, Macros and Combos",
+            "description": "Activate unique MODs, combos, and macros like rapid-fire, anti-recoil, turbo, drop-shot, and more with ease."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-keyboard",
+            "title": "Keyboard and Mouse on Consoles",
+            "description": "Enjoy full keyboard and mouse support directly through Titan Two or via Gtuner IV from your PC."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "badge": "Why Choose Titan Two",
+        "heading": "Key Features",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "software": {
+      "type": "software",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-code",
+            "title": "GPC Scripting Language",
+            "description": "C-like syntax for creating powerful gaming scripts"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-mouse-pointer",
+            "title": "Visual Programming",
+            "description": "Drag-and-drop interface for beginners with no coding experience"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-play",
+            "title": "Real-time Testing",
+            "description": "Test your scripts in real-time with visual feedback"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "badge": "Powerful Software",
+        "heading": "Gtuner IV Software",
+        "description": "Unlock the full potential of your TITAN TWO with our advanced programming software.",
+        "subheading": "Powerful Programming Interface",
+        "subdescription": "Gtuner IV is a comprehensive development environment that allows you to create, test, and deploy custom scripts to your TITAN TWO device.",
+        "button_label": "Download Gtuner IV",
+        "button_link": "https://www.consoletuner.com/downloads/",
+        "button_note": "Available for Win10(x64), Win8.1(x64), Win7(x64), OS X 10.13+",
+        "show_gamepacks": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product_title": "TITAN TWO",
+            "product_description": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+            "product_features": "Universal controller compatibility,Mods and macros support,Cross-platform gaming,Scripting capabilities,Windows and macOS support",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product_title": "Bluetooth Adapter",
+            "product_description": "Wireless connectivity for your TITAN TWO device. Enjoy lag-free gaming with Bluetooth support.",
+            "product_features": "Wireless connection,Low latency,Long battery life,Easy setup,Compatible with all controllers",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product_title": "Connection Kit",
+            "product_description": "Complete set of cables and adapters for all your gaming needs. Everything you need to connect your devices.",
+            "product_features": "Multiple cable types,High quality connectors,Compatible with all consoles,Durable construction,Plug and play",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ],
+      "settings": {
+        "badge": "Our Products",
+        "heading": "TITANTWO Products",
+        "description": "Discover our range of gaming devices and accessories designed to enhance your gaming experience.",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "features",
+    "software",
+    "products"
+  ]
+}

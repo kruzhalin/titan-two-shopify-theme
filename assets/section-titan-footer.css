@@ -1,0 +1,199 @@
+/* Titan Footer Styles */
+
+.footer {
+  background-color: #0A0A0A;
+  color: #ffffff;
+}
+
+.footer a {
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #4ec044;
+}
+
+.newsletter-form {
+  max-width: 400px;
+}
+
+.newsletter-form input[type="email"] {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  color: #ffffff;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: #4ec044;
+  outline: none;
+  box-shadow: 0 0 0 1px #4ec044;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: #9ca3af;
+}
+
+.newsletter-form__message {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.newsletter-form__message--success {
+  color: #4ec044;
+}
+
+.newsletter-form__message:not(.newsletter-form__message--success) {
+  color: #ef4444;
+}
+
+/* Social Icons */
+.footer .fab {
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.footer .fab:hover {
+  color: #4ec044;
+}
+
+/* Payment Icons */
+.footer .fa-cc-visa,
+.footer .fa-cc-mastercard,
+.footer .fa-cc-paypal,
+.footer .fa-cc-amazon-pay {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .fa-cc-visa:hover,
+.footer .fa-cc-mastercard:hover,
+.footer .fa-cc-paypal:hover,
+.footer .fa-cc-amazon-pay:hover {
+  color: #4ec044;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer .grid {
+    gap: 2rem;
+  }
+  
+  .footer .flex.flex-col.md\\:flex-row {
+    text-align: center;
+  }
+  
+  .newsletter-form {
+    max-width: 100%;
+  }
+  
+  .newsletter-form .flex {
+    flex-direction: column;
+  }
+  
+  .newsletter-form input[type="email"] {
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .newsletter-form button {
+    border-radius: 0.375rem;
+  }
+}
+
+/* Dark theme adjustments */
+.footer {
+  border-top: 1px solid #374151;
+}
+
+.footer .border-t {
+  border-color: #374151;
+}
+
+/* Hover effects for links */
+.footer ul li a {
+  position: relative;
+}
+
+.footer ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4ec044;
+  transition: width 0.3s ease;
+}
+
+.footer ul li a:hover::after {
+  width: 100%;
+}
+
+/* Brand logo styling */
+.footer .text-2xl.font-bold {
+  background: linear-gradient(135deg, #4ec044 0%, #65d45b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Newsletter form styling */
+.newsletter-form button {
+  background: linear-gradient(135deg, #4ec044 0%, #65d45b 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #65d45b 0%, #4ec044 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(78, 192, 68, 0.3);
+}
+
+/* Section spacing */
+.footer .container {
+  max-width: 1200px;
+}
+
+/* Typography */
+.footer h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Accessibility */
+.footer a:focus {
+  outline: 2px solid #4ec044;
+  outline-offset: 2px;
+}
+
+.footer button:focus {
+  outline: 2px solid #4ec044;
+  outline-offset: 2px;
+}
+
+/* Animation for newsletter success */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.newsletter-form__message--success {
+  animation: fadeInUp 0.5s ease-out;
+}

@@ -1,0 +1,89 @@
+{{ 'section-product-about.css' | asset_url | stylesheet_tag }}
+
+<div class="product-about-section py-20 bg-dark-accent">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      {% if section.settings.heading != blank %}
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      
+      {% if section.settings.content != blank %}
+        <div class="prose prose-lg prose-invert max-w-none text-center">
+          {{ section.settings.content }}
+        </div>
+      {% endif %}
+      
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <div class="text-center mt-8">
+          <a 
+            href="{{ section.settings.button_link }}" 
+            class="inline-block bg-accent hover:bg-accent-light text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product About Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About Titan Two"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Titan Two is an all-in-one controller adapter enabling cross-platform play and advanced customization. This section is a short summary used in quick popups on the homepage. Full details, images and links are available on this page.</p><ul><li>Universal controller compatibility</li><li>Gamepacks and community scripts</li><li>Windows and macOS support via Gtuner IV</li></ul><p>More content coming soon.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/#products"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product About Section"
+    }
+  ]
+}
+{% endschema %}

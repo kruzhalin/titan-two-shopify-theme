@@ -1,0 +1,182 @@
+{
+  "sections": {
+    "product_hero": {
+      "type": "product-hero",
+      "settings": {
+        "badge": "All-in-One Universal Controller Device",
+        "heading": "Titan Two",
+        "subheading": "Universal Gaming Converter & Crossover Device",
+        "description": "Use your favorite controller on PS, Xbox, Switch and PC with powerful mods, macros and scripting capabilities.",
+        "button_label": "Buy Now",
+        "button_link": "/#products",
+        "show_gallery": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "product_overview": {
+      "type": "product-overview",
+      "settings": {
+        "heading": "Overview",
+        "content": "<p>Detailed product description will be added soon.</p><ul><li>Use your favorite controller on PS, Xbox, Switch and PC</li><li>Powerful mods, macros and scripting with Gtuner IV</li><li>Cross-play and extensive peripheral compatibility</li></ul>",
+        "button_label": "Buy on Amazon",
+        "button_link": "/#products",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "product_about": {
+      "type": "product-about",
+      "settings": {
+        "heading": "About Titan Two",
+        "content": "<p>Titan Two is an all-in-one controller adapter enabling cross-platform play and advanced customization. This section is a short summary used in quick popups on the homepage. Full details, images and links are available on this page.</p><ul><li>Universal controller compatibility</li><li>Gamepacks and community scripts</li><li>Windows and macOS support via Gtuner IV</li></ul><p>More content coming soon.</p>",
+        "button_label": "Buy on Amazon",
+        "button_link": "/#products",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "product_features": {
+      "type": "features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-exchange-alt",
+            "title": "Converters, Adapters and Crossover Devices",
+            "description": "Connect your favorite controller to multiple supported gaming systems with Titan Two. This eliminates the need for separate adapters, converters, or crossover devices, offering an affordable and efficient all-in-one solution."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-magic",
+            "title": "Mods, Macros and Combos",
+            "description": "Activate unique MODs, combos, and macros like rapid-fire, anti-recoil, turbo, drop-shot, and more with ease. Simply load them into your game using drag-and-drop Gamepacks or community scripts — no extra tools or hardware required."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-keyboard",
+            "title": "Keyboard and Mouse on Consoles",
+            "description": "Enjoy full keyboard and mouse support directly through Titan Two or via Gtuner IV from your PC. This setup gives unmatched customization, letting you play console games with flexibility and precision."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "FightSticks, Steering Wheels and Joysticks",
+            "description": "Titan Two supports virtually any HID gaming device, including fight sticks, steering wheels, joysticks, foot pedals, and more. Easily connect and use a wide variety of peripherals without compatibility issues."
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-code",
+            "title": "Full-Featured Scripting Language",
+            "description": "Create scripts, combos, and macros with millisecond precision. Automate commands for motion sensors, touchpads, and other inputs to enhance gameplay with endless customization possibilities."
+          }
+        },
+        "feature_6": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-laptop",
+            "title": "Programming Software for Windows and Mac",
+            "description": "Gtuner IV is a cross-platform tool for configuring, updating, and programming Titan Two. It offers powerful features in a user-friendly interface, making customization and device management simple."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6"
+      ],
+      "settings": {
+        "badge": "Why Choose Titan Two",
+        "heading": "Key Features",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "product_specifications": {
+      "type": "specifications",
+      "blocks": {
+        "spec_1": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-microchip",
+            "title": "Processor",
+            "description": "32-bit ARM Cortex-M4 CPU running at 168MHz with hardware floating point unit"
+          }
+        },
+        "spec_2": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-memory",
+            "title": "Memory",
+            "description": "192KB RAM, 1MB Flash Memory for firmware and scripts storage"
+          }
+        },
+        "spec_3": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-plug",
+            "title": "Connectivity",
+            "description": "2x USB 2.0 Type-A ports, 2x USB 2.0 Type-B ports, 1x Mini-USB programming port"
+          }
+        },
+        "spec_4": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-bolt",
+            "title": "Power",
+            "description": "USB powered (5V), no external power supply needed"
+          }
+        },
+        "spec_5": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-ruler",
+            "title": "Dimensions",
+            "description": "110mm x 55mm x 20mm (L x W x H)"
+          }
+        },
+        "spec_6": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-weight",
+            "title": "Weight",
+            "description": "85 grams"
+          }
+        }
+      },
+      "block_order": [
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6"
+      ],
+      "settings": {
+        "badge": "Technical Details",
+        "heading": "Device Specifications",
+        "description": "The TITAN TWO is engineered with cutting-edge technology to deliver unmatched performance and reliability.",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "product_hero",
+    "product_overview",
+    "product_about",
+    "product_features",
+    "product_specifications"
+  ]
+}

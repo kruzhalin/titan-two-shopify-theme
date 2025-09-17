@@ -1,0 +1,22 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "titan_footer": {
+      "type": "titan-footer",
+      "settings": {
+        "brand_description": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+        "support_email": "shop@titantwoeurope.com",
+        "copyright_text": "ModdifyTech Sp. z o.o. All rights reserved.",
+        "show_social": true,
+        "newsletter_enable": true,
+        "show_payment_icons": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "titan_footer"
+  ]
+}

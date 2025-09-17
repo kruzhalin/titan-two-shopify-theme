@@ -1,0 +1,158 @@
+{{ 'section-compatibility.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="py-20 bg-dark section-{{ section.id }}-padding" id="compatibility">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      {%- if section.settings.badge != blank -%}
+        <div class="inline-block bg-accent/20 px-4 py-1 rounded-full text-accent text-sm font-medium mb-4">{{ section.settings.badge }}</div>
+      {%- endif -%}
+      
+      {%- if section.settings.heading != blank -%}
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          {{ section.settings.heading | replace: 'Consoles', '<span class="text-accent">Consoles</span>' }}
+        </h2>
+      {%- endif -%}
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      {%- for block in section.blocks -%}
+        <div class="text-center" {{ block.shopify_attributes }}>
+          <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <i class="{{ block.settings.icon }} text-2xl text-gray-400"></i>
+          </div>
+          <h3 class="font-semibold">{{ block.settings.title }}</h3>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Compatibility Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "Plays On These Devices"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Compatible Consoles"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "console",
+      "name": "Console",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon Class",
+          "default": "fas fa-gamepad",
+          "info": "Font Awesome icon class"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Console Name",
+          "default": "Console Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compatibility Section",
+      "blocks": [
+        {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "PS5 (Remote Play)"
+          }
+        },
+        {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "PS4"
+          }
+        },
+        {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "Xbox Series X|S"
+          }
+        },
+        {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "Xbox One"
+          }
+        },
+        {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "Nintendo Switch"
+          }
+        },
+        {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-desktop",
+            "title": "PC"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

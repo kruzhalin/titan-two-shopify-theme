@@ -1,0 +1,473 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "badge": "Next Generation Gaming Device",
+        "heading": "TITANTWO",
+        "subheading": "Ultimate Gaming Converter & Crossover Device",
+        "text": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+        "button_label": "Get TITAN TWO",
+        "button_link": "/#products",
+        "show_scroll_indicator": true,
+        "bottom_text": "Available in Europe",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-exchange-alt",
+            "title": "Converters, Adapters and Crossover Devices",
+            "description": "Connect your favorite controller to multiple supported gaming systems with Titan Two. This eliminates the need for separate adapters, converters, or crossover devices, offering an affordable and efficient all-in-one solution."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-magic",
+            "title": "Mods, Macros and Combos",
+            "description": "Activate unique MODs, combos, and macros like rapid-fire, anti-recoil, turbo, drop-shot, and more with ease. Simply load them into your game using drag-and-drop Gamepacks or community scripts — no extra tools or hardware required."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-keyboard",
+            "title": "Keyboard and Mouse on Consoles",
+            "description": "Enjoy full keyboard and mouse support directly through Titan Two or via Gtuner IV from your PC. This setup gives unmatched customization, letting you play console games with flexibility and precision."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "FightSticks, Steering Wheels and Joysticks",
+            "description": "Titan Two supports virtually any HID gaming device, including fight sticks, steering wheels, joysticks, foot pedals, and more. Easily connect and use a wide variety of peripherals without compatibility issues."
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-code",
+            "title": "Full-Featured Scripting Language",
+            "description": "Create scripts, combos, and macros with millisecond precision. Automate commands for motion sensors, touchpads, and other inputs to enhance gameplay with endless customization possibilities."
+          }
+        },
+        "feature_6": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-laptop",
+            "title": "Programming Software for Windows and Mac",
+            "description": "Gtuner IV is a cross-platform tool for configuring, updating, and programming Titan Two. It offers powerful features in a user-friendly interface, making customization and device management simple."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6"
+      ],
+      "settings": {
+        "badge": "Why Choose Titan Two",
+        "heading": "Key Features",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "software": {
+      "type": "software",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-code",
+            "title": "GPC Scripting Language",
+            "description": "C-like syntax for creating powerful gaming scripts"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-mouse-pointer",
+            "title": "Visual Programming",
+            "description": "Drag-and-drop interface for beginners with no coding experience"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-play",
+            "title": "Real-time Testing",
+            "description": "Test your scripts in real-time with visual feedback"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-users",
+            "title": "Community Scripts",
+            "description": "Access a library of community-created scripts for popular games"
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "fas fa-cog",
+            "title": "Device Management",
+            "description": "Update firmware, manage profiles, and configure device settings"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5"
+      ],
+      "settings": {
+        "badge": "Powerful Software",
+        "heading": "Gtuner IV Software",
+        "description": "Unlock the full potential of your TITAN TWO with our advanced programming software.",
+        "subheading": "Powerful Programming Interface",
+        "subdescription": "Gtuner IV is a comprehensive development environment that allows you to create, test, and deploy custom scripts to your TITAN TWO device. From simple button remapping to complex macros, the possibilities are endless.",
+        "button_label": "Download Gtuner IV",
+        "button_link": "https://www.consoletuner.com/downloads/",
+        "button_note": "Available for Win10(x64), Win8.1(x64), Win7(x64), OS X 10.13+",
+        "show_gamepacks": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "compatibility": {
+      "type": "compatibility",
+      "blocks": {
+        "console_1": {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "PS5 (Remote Play)"
+          }
+        },
+        "console_2": {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "PS4"
+          }
+        },
+        "console_3": {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "Xbox Series X|S"
+          }
+        },
+        "console_4": {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "Xbox One"
+          }
+        },
+        "console_5": {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-gamepad",
+            "title": "Nintendo Switch"
+          }
+        },
+        "console_6": {
+          "type": "console",
+          "settings": {
+            "icon": "fas fa-desktop",
+            "title": "PC"
+          }
+        }
+      },
+      "block_order": [
+        "console_1",
+        "console_2",
+        "console_3",
+        "console_4",
+        "console_5",
+        "console_6"
+      ],
+      "settings": {
+        "badge": "Plays On These Devices",
+        "heading": "Compatible Consoles",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "specifications": {
+      "type": "specifications",
+      "blocks": {
+        "spec_1": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-microchip",
+            "title": "Processor",
+            "description": "32-bit ARM Cortex-M4 CPU running at 168MHz with hardware floating point unit"
+          }
+        },
+        "spec_2": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-memory",
+            "title": "Memory",
+            "description": "192KB RAM, 1MB Flash Memory for firmware and scripts storage"
+          }
+        },
+        "spec_3": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-plug",
+            "title": "Connectivity",
+            "description": "2x USB 2.0 Type-A ports, 2x USB 2.0 Type-B ports, 1x Mini-USB programming port"
+          }
+        },
+        "spec_4": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-bolt",
+            "title": "Power",
+            "description": "USB powered (5V), no external power supply needed"
+          }
+        },
+        "spec_5": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-ruler",
+            "title": "Dimensions",
+            "description": "110mm x 55mm x 20mm (L x W x H)"
+          }
+        },
+        "spec_6": {
+          "type": "spec",
+          "settings": {
+            "icon": "fas fa-weight",
+            "title": "Weight",
+            "description": "85 grams"
+          }
+        }
+      },
+      "block_order": [
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6"
+      ],
+      "settings": {
+        "badge": "Technical Details",
+        "heading": "Device Specifications",
+        "description": "The TITAN TWO is engineered with cutting-edge technology to deliver unmatched performance and reliability.",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product_title": "TITAN TWO",
+            "product_description": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+            "product_features": "Universal controller compatibility,Mods and macros support,Cross-platform gaming,Scripting capabilities,Windows and macOS support",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product_title": "Bluetooth Adapter",
+            "product_description": "Wireless connectivity for your TITAN TWO device. Enjoy lag-free gaming with Bluetooth support.",
+            "product_features": "Wireless connection,Low latency,Long battery life,Easy setup,Compatible with all controllers",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product_title": "Connection Kit",
+            "product_description": "Complete set of cables and adapters for all your gaming needs. Everything you need to connect your devices.",
+            "product_features": "Multiple cable types,High quality connectors,Compatible with all consoles,Durable construction,Plug and play",
+            "button_text": "Learn More",
+            "buy_button_text": "Buy Now"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ],
+      "settings": {
+        "badge": "Our Products",
+        "heading": "TITANTWO Products",
+        "description": "Discover our range of gaming devices and accessories designed to enhance your gaming experience.",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "seo_text": {
+      "type": "seo-text",
+      "settings": {
+        "heading": "About TITANTWO",
+        "content": "<p>TITANTWO is the most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.</p><p>Whether you're a casual gamer or a competitive esports player, TITANTWO provides the tools you need to enhance your gaming experience across all platforms.</p>",
+        "show_features": true,
+        "features": "Universal controller compatibility,Powerful mods and macros,Cross-platform gaming,Advanced scripting capabilities,Windows and macOS support,Community-driven scripts",
+        "cta_text": "Get TITANTWO Now",
+        "cta_link": "/#products",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "certificates": {
+      "type": "certificates",
+      "blocks": {
+        "cert_1": {
+          "type": "certificate",
+          "settings": {
+            "title": "Appendix A — Emission & Immunity Test Results (EMC)",
+            "description": "Supporting Evidence | Photos / Data",
+            "date": "Jul 2021"
+          }
+        },
+        "cert_2": {
+          "type": "certificate",
+          "settings": {
+            "title": "Appendix B — Test Setup Photos (EMC)",
+            "description": "Supporting Evidence | Photos / Data",
+            "date": "Jul 2021"
+          }
+        },
+        "cert_3": {
+          "type": "certificate",
+          "settings": {
+            "title": "Appendix C — EUT Photos",
+            "description": "Supporting Evidence | Photos / Data",
+            "date": "Jul 2021"
+          }
+        },
+        "cert_4": {
+          "type": "certificate",
+          "settings": {
+            "title": "Appendix D — Test Setup Photos (RF)",
+            "description": "Supporting Evidence | Photos / Data",
+            "date": "Jul 2021"
+          }
+        },
+        "cert_5": {
+          "type": "certificate",
+          "settings": {
+            "title": "Appendix E — BT LE RF Test Data",
+            "description": "Radio | EN 300 328 (BT LE)",
+            "date": "Issued Jul 2021"
+          }
+        },
+        "cert_6": {
+          "type": "certificate",
+          "settings": {
+            "title": "EN 55032 / EN 55035 — Multimedia EMC — Report LCS210708027AE",
+            "description": "EMC (Multimedia) | EN 55032/EN 55035",
+            "date": "Issued Jul 2021"
+          }
+        },
+        "cert_7": {
+          "type": "certificate",
+          "settings": {
+            "title": "EN 55032 / EN 55035 — Multimedia EMC — Report LCS210708027AE (Main)",
+            "description": "EMC (Multimedia) | EN 55032/EN 55035 | Main Report",
+            "date": "Jul 2021"
+          }
+        },
+        "cert_8": {
+          "type": "certificate",
+          "settings": {
+            "title": "IEC/EN 62368-1 — Safety — Report LCS210708028AS",
+            "description": "Safety | IEC/EN 62368-1",
+            "date": "Issued Jul 2021"
+          }
+        },
+        "cert_9": {
+          "type": "certificate",
+          "settings": {
+            "title": "EN 301 489-1/-17 — EMC for Radio — Report LCS210708029AEA",
+            "description": "EMC (Radio) | EN 301 489-1/-17",
+            "date": "Issued Jul 2021"
+          }
+        },
+        "cert_10": {
+          "type": "certificate",
+          "settings": {
+            "title": "EN 300 328 (BT LE) — Radio — Report LCS210708029AEB",
+            "description": "Radio | EN 300 328 (BT LE)",
+            "date": "Issued Jul 2021"
+          }
+        },
+        "cert_11": {
+          "type": "certificate",
+          "settings": {
+            "title": "EN 50663 / EN 62479 — EMF — Report LCS210708029AEC",
+            "description": "EMF (Human Exposure) | EN 50663/EN 62479",
+            "date": "Issued Jul 2021"
+          }
+        },
+        "cert_12": {
+          "type": "certificate",
+          "settings": {
+            "title": "EN 301 489-1/-17 — EMC for Radio — Report LCS210708029AE (Main)",
+            "description": "EMC (Radio) | EN 301 489-1/-17 | Main Report",
+            "date": "Jul 2021"
+          }
+        }
+      },
+      "block_order": [
+        "cert_1",
+        "cert_2",
+        "cert_3",
+        "cert_4",
+        "cert_5",
+        "cert_6",
+        "cert_7",
+        "cert_8",
+        "cert_9",
+        "cert_10",
+        "cert_11",
+        "cert_12"
+      ],
+      "settings": {
+        "heading": "Certificates & Compliance",
+        "description": "View and download CE / EMC / RF / Safety documentation. We currently publish 12 documents.",
+        "button_label": "Open Certificates Page",
+        "button_link": "/pages/certificates",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "features",
+    "software",
+    "compatibility",
+    "specifications",
+    "products",
+    "seo_text",
+    "certificates"
+  ]
+}

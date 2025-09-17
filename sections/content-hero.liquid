@@ -1,0 +1,83 @@
+{{ 'section-content-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="content-hero-section py-16 bg-dark">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      {% if section.settings.show_breadcrumb %}
+        <nav class="breadcrumb mb-6">
+          <a href="/" class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a>
+          <span class="text-gray-500 mx-2">/</span>
+          <span class="text-white">{{ page.title }}</span>
+        </nav>
+      {% endif %}
+      
+      {% if section.settings.heading != blank %}
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+          {{ section.settings.heading }}
+        </h1>
+      {% elsif page.title != blank %}
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+          {{ page.title }}
+        </h1>
+      {% endif %}
+      
+      {% if section.settings.subheading != blank %}
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          {{ section.settings.subheading }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Content Hero Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Leave blank to use page title"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumb",
+      "label": "Show Breadcrumb",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Hero Section"
+    }
+  ]
+}
+{% endschema %}

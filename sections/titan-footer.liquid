@@ -1,0 +1,250 @@
+{{ 'section-titan-footer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="bg-dark border-t border-gray-800 section-{{ section.id }}-padding">
+  <div class="container mx-auto px-4">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <!-- Brand Section -->
+      <div class="lg:col-span-1">
+        <div class="mb-6">
+          <a href="{{ routes.root_url }}" class="text-2xl font-bold text-white">
+            <span class="text-accent">TITAN</span>TWO Europe
+          </a>
+        </div>
+        {%- if section.settings.brand_description != blank -%}
+          <p class="text-gray-400 text-sm mb-4">{{ section.settings.brand_description }}</p>
+        {%- endif -%}
+        
+        <!-- Social Links -->
+        {%- if section.settings.show_social -%}
+          <div class="flex space-x-4">
+            {%- if settings.social_facebook_link != blank -%}
+              <a href="{{ settings.social_facebook_link }}" class="text-gray-400 hover:text-accent transition-colors" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            {%- endif -%}
+            {%- if settings.social_instagram_link != blank -%}
+              <a href="{{ settings.social_instagram_link }}" class="text-gray-400 hover:text-accent transition-colors" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+              </a>
+            {%- endif -%}
+            {%- if settings.social_twitter_link != blank -%}
+              <a href="{{ settings.social_twitter_link }}" class="text-gray-400 hover:text-accent transition-colors" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+              </a>
+            {%- endif -%}
+            {%- if settings.social_youtube_link != blank -%}
+              <a href="{{ settings.social_youtube_link }}" class="text-gray-400 hover:text-accent transition-colors" target="_blank" rel="noopener">
+                <i class="fab fa-youtube"></i>
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Products Section -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Products</h3>
+        <ul class="space-y-2">
+          <li><a href="/collections/titan-two" class="text-gray-400 hover:text-accent transition-colors text-sm">TITAN TWO</a></li>
+          <li><a href="/collections/bluetooth-adapter" class="text-gray-400 hover:text-accent transition-colors text-sm">Bluetooth Adapter</a></li>
+          <li><a href="/collections/usb-cables" class="text-gray-400 hover:text-accent transition-colors text-sm">USB Cable Pack</a></li>
+          <li><a href="/collections/accessories" class="text-gray-400 hover:text-accent transition-colors text-sm">Accessories</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources Section -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="/pages/cookie-policy" class="text-gray-400 hover:text-accent transition-colors text-sm">Cookie Policy</a></li>
+          <li><a href="/pages/privacy-policy" class="text-gray-400 hover:text-accent transition-colors text-sm">Privacy Policy</a></li>
+          <li><a href="/pages/terms-of-service" class="text-gray-400 hover:text-accent transition-colors text-sm">Terms of Service</a></li>
+          <li><a href="https://www.consoletuner.com/downloads/" class="text-gray-400 hover:text-accent transition-colors text-sm" target="_blank" rel="noopener">Download Gtuner IV</a></li>
+        </ul>
+      </div>
+
+      <!-- Support Section -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Support</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:{{ section.settings.support_email | default: 'shop@titantwoeurope.com' }}" class="text-gray-400 hover:text-accent transition-colors text-sm">{{ section.settings.support_email | default: 'shop@titantwoeurope.com' }}</a></li>
+          <li><a href="/pages/shipping-policy" class="text-gray-400 hover:text-accent transition-colors text-sm">Shipping Policy</a></li>
+          <li><a href="/pages/return-policy" class="text-gray-400 hover:text-accent transition-colors text-sm">Return Policy</a></li>
+          <li><a href="/pages/faq" class="text-gray-400 hover:text-accent transition-colors text-sm">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    {%- if section.settings.newsletter_enable -%}
+      <div class="border-t border-gray-800 pt-8 mb-8">
+        <div class="max-w-md mx-auto text-center">
+          <h3 class="text-white font-semibold mb-2">Stay Updated</h3>
+          <p class="text-gray-400 text-sm mb-4">Get the latest news and updates about TITAN TWO</p>
+          
+          {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="flex">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-md text-white placeholder-gray-400 focus:outline-none focus:border-accent"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="ContactFooter-error"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="ContactFooter-success"
+                {% endif %}
+                placeholder="Enter your email"
+                required
+              >
+              <button
+                type="submit"
+                class="px-6 py-2 bg-accent hover:bg-accent-light text-white rounded-r-md transition-colors"
+                name="commit"
+                id="Subscribe"
+                aria-label="Subscribe"
+              >
+                Subscribe
+              </button>
+            </div>
+            
+            {%- if form.errors -%}
+              <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}
+              </small>
+            {%- endif -%}
+            
+            {%- if form.posted_successfully? -%}
+              <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>
+                <i class="fas fa-check-circle"></i>
+                {{ 'newsletter.success' | t }}
+              </h3>
+            {%- endif -%}
+          {%- endform -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+          © {{ 'now' | date: "%Y" }} {{ section.settings.copyright_text | default: 'ModdifyTech Sp. z o.o. All rights reserved.' }}
+        </div>
+        
+        <!-- Payment Icons -->
+        {%- if section.settings.show_payment_icons -%}
+          <div class="flex space-x-4">
+            <div class="text-gray-400 text-sm">We accept:</div>
+            <div class="flex space-x-2">
+              <i class="fab fa-cc-visa text-gray-400 text-lg"></i>
+              <i class="fab fa-cc-mastercard text-gray-400 text-lg"></i>
+              <i class="fab fa-cc-paypal text-gray-400 text-lg"></i>
+              <i class="fab fa-cc-amazon-pay text-gray-400 text-lg"></i>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Titan Footer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "brand_description",
+      "label": "Brand Description",
+      "default": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization."
+    },
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support Email",
+      "default": "shop@titantwoeurope.com"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "ModdifyTech Sp. z o.o. All rights reserved."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show Social Links",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "label": "Enable Newsletter Signup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show Payment Icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Titan Footer"
+    }
+  ]
+}
+{% endschema %}
