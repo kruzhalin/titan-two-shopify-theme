@@ -23,7 +23,7 @@
           "settings": {
             "icon": "fas fa-exchange-alt",
             "title": "Converters, Adapters and Crossover Devices",
-            "description": "Connect your favorite controller to multiple supported gaming systems with Titan Two."
+            "description": "Connect your favorite controller to multiple supported gaming systems with Titan Two. This eliminates the need for separate adapters, converters, or crossover devices, offering an affordable and efficient all-in-one solution."
           }
         },
         "feature_2": {
@@ -31,7 +31,7 @@
           "settings": {
             "icon": "fas fa-magic",
             "title": "Mods, Macros and Combos",
-            "description": "Activate unique MODs, combos, and macros like rapid-fire, anti-recoil, turbo, drop-shot, and more with ease."
+            "description": "Activate unique MODs, combos, and macros like rapid-fire, anti-recoil, turbo, drop-shot, and more with ease. Simply load them into your game using drag-and-drop Gamepacks or community scripts — no extra tools or hardware required."
           }
         },
         "feature_3": {
@@ -39,7 +39,7 @@
           "settings": {
             "icon": "fas fa-keyboard",
             "title": "Keyboard and Mouse on Consoles",
-            "description": "Enjoy full keyboard and mouse support directly through Titan Two or via Gtuner IV from your PC."
+            "description": "Enjoy full keyboard and mouse support directly through Titan Two or via Gtuner IV from your PC. This setup gives unmatched customization, letting you play console games with flexibility and precision."
           }
         }
       },

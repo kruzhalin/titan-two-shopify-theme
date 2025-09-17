@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "badge": "Next Generation Gaming Device",
+        "heading": "TITANTWO",
+        "subheading": "Ultimate Gaming Converter & Crossover Device",
+        "text": "The most advanced gaming device that allows you to use your favorite controller on any console, create macros, run scripts, and gain the competitive edge with unprecedented customization.",
+        "button_label": "Get TITAN TWO",
+        "button_link": "/#products",
+        "show_scroll_indicator": true,
+        "bottom_text": "Available in Europe",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero"
+  ]
+}
